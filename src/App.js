@@ -35,14 +35,13 @@ const App = () => {
 
   const getSearch = e => {
     e.preventDefault();
-    setQuery(search);
+    if(search){setQuery(search);}
   }
 
   return(
     <div className="App">
       <form onSubmit={getSearch} className="SearchForm d-flex justify-content-center">
-        <input type='text' value = {search} onChange = {updateSearch} />
-        <button type='submit'>Search</button>
+        <input placeholder = 'Location...' className='search' type='text' value = {search} onChange = {updateSearch} />
       </form>
       <div className='d-flex justify-content-center'>
         {weatherDatas && (<WeatherCard 
